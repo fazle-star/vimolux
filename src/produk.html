@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body class="font-sans">
+    <!-- Header & Navigation -->
+    <header class="fixed w-full bg-gradient-to-br from-indigo-500 to bg-softblue3 text-white z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold hover:scale-105 transition-transform cursor-pointer">
+                <a href="index.html">
+                    Vimolux
+                </a>
+            </div>
+        
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
+                </svg>
+            </button>
+
+            <!-- Navigation Links -->
+            <div class="hidden lg:flex space-x-8">
+                <a href="#home" class="hover:text-blue-100 transition-colors">Beranda</a>
+                <a href="#products" class="hover:text-blue-100 transition-colors">Produk</a>
+                <a href="#calculator" class="hover:text-blue-100 transition-colors">Kalkulator</a>
+                <a href="#testimonials" class="hover:text-blue-100 transition-colors">Testimoni</a>
+                <a href="#contact" class="hover:text-blue-100 transition-colors">Kontak</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="lg:hidden hidden bg-gray-800 text-white" id="mobile-menu">
+        <div class="container mx-auto px-4 py-2 flex flex-col space-y-2">
+            <a href="#home" class="py-2">Beranda</a>
+            <a href="#products" class="py-2">Produk</a>
+            <a href="#calculator" class="py-2">Kalkulator</a>
+            <a href="#testimonials" class="py-2">Testimoni</a>
+            <a href="#contact" class="py-2">Kontak</a>
+        </div>
+    </div>
+</body>
+</html>

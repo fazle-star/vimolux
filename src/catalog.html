@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vimolux - Toko Cat Modern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./output.css" rel="stylesheet">
+    <style>
+        .color-block {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-out;
+        }
+        
+        .color-block.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .content-wrapper {
+            transform-origin: top;
+            transition: all 0.4s ease-in-out;
+        }
+        
+        .content-wrapper.hidden {
+            transform: scaleY(0);
+            opacity: 0;
+            height: 0;
+            display: none;
+        }
+        
+        .content-wrapper.visible {
+            transform: scaleY(1);
+            opacity: 1;
+            display: block;
+        }
+    
+        /* Staggered animations for each color block */
+        .color-block:nth-child(1).show { transition-delay: 0.1s; }
+        .color-block:nth-child(2).show { transition-delay: 0.2s; }
+        .color-block:nth-child(3).show { transition-delay: 0.3s; }
+        .color-block:nth-child(4).show { transition-delay: 0.4s; }
+        .color-block:nth-child(5).show { transition-delay: 0.5s; }
+
+        .hidden-scroll {
+            opacity: 0;
+            filter: blur(5px);
+            transform: translateX(-100%);
+            transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hidden-scroll-right {
+            opacity: 0;
+            filter: blur(5px);
+            transform: translateX(100%);
+            transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .text-hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transition-delay: 0.4s;
+        }
+        
+        .show-scroll {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateX(0);
+        }
+        
+        .text-show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Responsive image container */
+        .img-container {
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Custom breakpoint styles */
+        @media (max-width: 640px) {
+            .section-spacing {
+                margin-bottom: 3rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Header & Navigation -->
+    <header class="fixed w-full bg-gradient-to-br from-indigo-500 to bg-softblue3 text-white z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold hover:scale-105 transition-transform cursor-pointer">
+                <a href="index.html">
+                    Vimolux
+                </a>
+            </div>
+        
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
+                </svg>
+            </button>
+
+            <!-- Navigation Links -->
+            <div class="hidden lg:flex space-x-8">
+                <a href="#About" class="hover:text-blue-100 transition-colors">About</a>
+                <a href="#Katalog" class="hover:text-blue-100 transition-colors">Katalog</a>
+                <a href="#calculator" class="hover:text-blue-100 transition-colors">Kalkulator</a>
+                <a href="#testimonials" class="hover:text-blue-100 transition-colors">Testimoni</a>
+                <a href="#contact" class="hover:text-blue-100 transition-colors">Kontak</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="lg:hidden hidden bg-gray-800 text-white" id="mobile-menu">
+        <div class="container mx-auto px-4 py-2 flex flex-col space-y-2">   
+            <a href="#About" class="py-2">About</a>
+            <a href="#Katalog" class="py-2">Katalog/a>
+            <a href="#calculator" class="py-2">Kalkulator</a>
+            <a href="#testimonials" class="py-2">Testimoni</a>
+            <a href="#contact" class="py-2">Kontak</a>
+        </div>
+    </div>
+
+    <!-- <div class="pt-20 flex mx-auto bg-white ease-out animate-slide-top ">
+        <div class="grid grid-rows-2 md:grid-cols-2 m-auto items-center ">
+            <div class=" bg-white p-5 rounded-lg shadow-xl md:w-[600px] ">
+                <img src="img/Gambar_WhatsApp_2025-01-08_pukul_15.18.39_3fb706de__1_-removebg.png" class=" w-[300px] md:w-[200px] m-auto">
+                <div class="text-center pt-2">
+                    <h3 class="font-bold">VIMOLUX PAINTS</h3>
+                    <p class="font-bold">INTERIOR & EXTERIOR PAINTS</p>
+                </div>
+            </div>
+            <div class=" m-4  justify-center pt-5 md:pt-18 ">
+                <h3 class="pb-5 font-bold text-xl">Produsen cat berkualitas</h3>
+                <p class="max-w-[600px]">Vimolux merupakan produsen cat berkualitas tinggi,Kami hadir dengan komitmen untuk menciptakan produk cat yang tidak hanya ramah lingkungan, tetapi juga memberikan hasil pengecatan yang luar biasa, tahan lama, dan mudah diaplikasikan..</p>
+                <img src="img/waranty-vimolux.jpg" class="w-[400px]">
+            </div>
+        </div>
+    </div> -->
+
+        <section class="py-16 bg-gradient-to-br bg-white h-screen" id="About">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Tentang Kami</h2>
+                <div class="w-20 h-1 bg-blue-500 mx-auto rounded-full"></div>
+            </div>
+
+                <!-- Content Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Image Section -->
+                <div class="relative">
+                <div class="absolute inset-0 bg-blue-500 rounded-lg transform translate-x-3 translate-y-3"></div>
+                <img
+                    src="img/Gambar WhatsApp 2025-01-08 pukul 15.18.39_3fb706de (1).jpg"
+                    alt="About Us"
+                    class="relative z-10 rounded-lg shadow-xl w-full h-full object-cover "
+                />
+                </div>
+
+                <!-- Text Content -->
+                <div class="space-y-6">
+                <h3 class="text-2xl font-semibold text-gray-900">
+                    Menghadirkan cat tembok berkualitas 
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Vimolux merupakan produsen cat berkualitas tinggi,Kami hadir dengan komitmen untuk menciptakan produk cat yang tidak hanya ramah lingkungan, tetapi juga memberikan hasil pengecatan yang luar biasa, tahan lama, dan mudah diaplikasikan..
+                </p>
+                <img src="img/waranty-vimolux.jpg" class="w-[3  50px]">
+                    <!-- Stats -->
+                <div class="grid grid-cols-2 gap-8 py-8">
+                    <div class="text-center">
+                        <span class="block text-3xl font-bold text-blue-500">50+</span>
+                        <span class="text-gray-500">Proyek Selesai</span>
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-3xl font-bold text-blue-500">98%</span>
+                        <span class="text-gray-500">Klien Puas</span>
+                    </div>
+                </div>
+
+                    <!-- CTA Button -->
+                <button class="mt-8 px-8 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-300 transform hover:-translate-y-1 " >
+                    CEK TESTIMONI
+                </button>
+                </div>
+            </div>
+
+                <!-- Features -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+                <!-- Feature Card 1 -->
+                <div class="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h4 class="text-xl font-semibold mb-2">Kualitas Terbaik</h4>
+                <p class="text-gray-600">Kami berkomitmen untuk memberikan layanan dengan standar tertinggi.</p>
+                </div>
+
+                <!-- Feature Card 2 -->
+                <div class="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <h4 class="text-xl font-semibold mb-2">pengiriman Cepat</h4>
+                <p class="text-gray-600">Respons cepat dan solusi efektif untuk setiap kebutuhan Anda.</p>
+                </div>
+
+                <!-- Feature Card 3 -->
+                <div class="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                    </svg>
+                </div>
+                <h4 class="text-xl font-semibold mb-2">bervariasi</h4>
+                <p class="text-gray-600">variasi warna yang beragam dan juga tersedia yang bertexstur.</p>
+                </div>
+            </div>
+            </div>
+        </section>
+
+<!-- <div class="bg-softblue3">
+    <div>
+        <img src="img/Gambar WhatsApp 2025-01-17 pukul 05.44.57_01c70374.jpg" class="w-52">
+    </div>
+    <div>
+        <img src="img/Gambar WhatsApp 2025-01-17 pukul 05.43.27_b88bc892.jpg" class="w-52">
+    </div>
+    <div>
+        <img src="img/Gambar WhatsApp 2025-01-17 pukul 05.43.28_29d8fe73.jpg" class="w-52">
+    </div>
+</div> -->
+
+<div class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen p-4 sm:p-6 md:p-8 lg:p-12">
+    <div class="max-w-7xl mx-auto space-y-12 sm:space-y-16 md:space-y-24 py-8 sm:py-12">
+        <!-- Section 1 -->
+        <div class="flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-12 hidden-scroll section-spacing">
+            <div class="w-full md:w-1/2 group">
+                <div class="img-container relative rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg sm:shadow-xl md:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+                    <img src="img/Gambar WhatsApp 2025-01-17 pukul 05.44.57_01c70374.jpg" 
+                    alt="Image 1"
+                    class="transition-transform duration-500 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 space-y-4 sm:space-y-5 md:space-y-6 text-hidden p-4 sm:p-6">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 tracking-tight">Eksplorasi Visual</h2>
+                <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+                    Menemukan keindahan dalam setiap detail, menghadirkan perspektif baru dalam 
+                    setiap sudut pandang. Perjalanan visual yang menginspirasi dan memukau.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="flex flex-col md:flex-row-reverse items-center gap-6 sm:gap-8 md:gap-12 hidden-scroll-right section-spacing">
+            <div class="w-full md:w-1/2 group">
+                <div class="img-container relative rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg sm:shadow-xl md:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+                    <img src="img/Gambar WhatsApp 2025-01-17 pukul 05.43.27_b88bc892.jpg" 
+                    alt="Image 2"
+                    class="transition-transform duration-500 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 space-y-4 sm:space-y-5 md:space-y-6 text-hidden p-4 sm:p-6">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 tracking-tight">Momen Sempurna</h2>
+                <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+                    Setiap frame menceritakan kisah unik, mengabadikan momen berharga dalam 
+                    balutan estetika yang memukau. Kreativitas tanpa batas dalam setiap pixel.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-12 hidden-scroll section-spacing">
+            <div class="w-full md:w-1/2 group">
+                <div class="img-container relative rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg sm:shadow-xl md:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+                    <img src="img/Gambar WhatsApp 2025-01-17 pukul 05.43.28_29d8fe73.jpg" 
+                         alt="Image 3"
+                         class="transition-transform duration-500 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 space-y-4 sm:space-y-5 md:space-y-6 text-hidden p-4 sm:p-6">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 tracking-tight">Harmoni Visual</h2>
+                <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+                    Paduan sempurna antara teknik dan artistik, menciptakan harmoni visual yang 
+                    memikat. Sebuah masterpiece yang berbicara melalui bahasa universal.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- baris pertama -->
+    <div class="mt-[1000px] md:mt-[50px] z-50">
+    <h2 class="text-3xl font-bold text-center mb-12 "id="Katalog">catalog warna</h2>
+    </div> 
+    
+    <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
+        <button id="toggleButton" 
+        class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
+        putih
+    </button>
+    <div id="contentWrapper" class="content-wrapper hidden">
+        <section class="py-5 bg-gray-100"> 
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="color-block h-32 bg-white rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                            putih
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-putih-seju rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                salju
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-putih-tulang rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                putih-tulang
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
+        <button id="toggleButton2" 
+        class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
+        abu-abu
+    </button>
+    <div id="contentWrapper2" class="content-wrapper hidden">
+        <section class="py-5 bg-gray-100"> 
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                    <div class="color-block h-32 bg-abu-100 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                            abu-muda
+                        </div>
+                    </div>
+                    <div class="color-block h-32 bg-abu-200 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                            abu-sedang
+                        </div>
+                    </div>
+                    <div class="color-block h-32 bg-abu-300 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                            abu-tua
+                        </div>
+                    </div>
+                    <div class="color-block h-32 bg-abu-hijau rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                            abu-hijau
+                        </div>
+                    </div>
+                        <div class="color-block h-32 bg-abu-biru rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                abu-biru
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
+        <button id="toggleButton3" 
+                class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
+            kuning
+        </button>
+        <div id="contentWrapper3" class="content-wrapper hidden">
+            <section class="py-5 bg-gray-100"> 
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="color-block h-32 bg-yellow-100 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                kuning-gading
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-yellow-300 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                kuning-lemon
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-yellow-400 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                kuning-medium
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-yellow-500 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                kuning-golden
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
+        <button id="toggleButton4" 
+                class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
+            hijau
+        </button>
+        <div id="contentWrapper4" class="content-wrapper hidden">
+            <section class="py-5 bg-gray-100"> 
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <div class="color-block h-32 bg-hijau-100 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                hijau-muda
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-hijau-200 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                hijau-sedang
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-hijau-300 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                hijau-tua
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-hijau-pandan rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                bolu-pandan
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-hijau-kuning rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                green-yellow
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
+        <button id="toggleButton5" 
+                class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
+            tosca
+        </button>
+        <div id="contentWrapper5" class="content-wrapper hidden">
+            <section class="py-5 bg-gray-100"> 
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <div class="color-block h-32 bg-tosca rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                tosca
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-tosca-100 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                tosca-muda
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-tosca-200 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                tosca-sedang
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-tosca-300 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                tosca-tua
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-tosca-biru rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                tosca-biru
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
+        <button id="toggleButton6" 
+                class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
+            biru
+        </button>
+        <div id="contentWrapper6" class="content-wrapper hidden">
+            <section class="py-5 bg-gray-100"> 
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <div class="color-block h-32 bg-biru rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                biru
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-biru-100 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                biru-muda
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-biru-200 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                biru-sedang
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-biru-300 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                biru-tua
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-biru-langit rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                biru-langit
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
+        <button id="toggleButton7" 
+                class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
+            merah
+        </button>
+        <div id="contentWrapper7" class="content-wrapper hidden">
+            <section class="py-5 bg-gray-100"> 
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <div class="color-block h-32 bg-merah rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                merah
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-merah-100 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                merah-muda
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-merah-200 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                merah-sedang
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-merah-300 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                merah-tua
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-merah-salem rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                merah-salem
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
+        <button id="toggleButton8" 
+                class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
+            pink
+        </button>
+        <div id="contentWrapper8" class="content-wrapper hidden">
+            <section class="py-5 bg-gray-100"> 
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="color-block h-32 bg-pink rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                pink
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-pink-100 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                pink-muda
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-pink-200 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                merah-tua
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
+        <button id="toggleButton9" 
+                class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
+            orange
+        </button>
+        <div id="contentWrapper9" class="content-wrapper hidden">
+            <section class="py-5 bg-gray-100"> 
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="color-block h-32 bg-oren rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                orange
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-oren-100 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                orange-muda
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-oren-200 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                orange-tua
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
+        <button id="toggleButton10" 
+                class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
+            coklat
+        </button>
+        <div id="contentWrapper10" class="content-wrapper hidden">
+            <section class="py-5 bg-gray-100"> 
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="color-block h-32 bg-coklat rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                coklat
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-coklat-100 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                coklat-muda
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-coklat-200 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                coklat-tua
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-coklat-mocca rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                coklat-mocca
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
+        <button id="toggleButton11" 
+                class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
+            krem
+        </button>
+        <div id="contentWrapper11" class="content-wrapper hidden">
+            <section class="py-5 bg-gray-100"> 
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="color-block h-32 bg-krem rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                krem
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-krem-100 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                krem-muda
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-krem-200 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                krem-tua
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
+        <button id="toggleButton12" 
+                class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
+            ungu
+        </button>
+        <div id="contentWrapper12" class="content-wrapper hidden">
+            <section class="py-5 bg-gray-100"> 
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="color-block h-32 bg-ungu rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                ungu
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-ungu-100 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                ungu-muda
+                            </div>
+                        </div>
+                        <div class="color-block h-32 bg-purple-900 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
+                                ungu-tua
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+<script src="catalog.js"></script>
+<script src="tetimoni.js"></script>
+</html>

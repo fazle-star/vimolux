@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vimolux - Toko Cat Modern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body class="font-sans">
+    <!-- Header & Navigation -->
+    <header class="fixed w-full bg-gradient-to-br from-indigo-500 to bg-softblue3 text-white z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold hover:scale-105 transition-transform cursor-pointer">
+                Vimolux 
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden" id="mobile-menu-b utton">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
+                </svg>
+            </button>
+
+            <!-- Navigation Links -->
+            <div class="hidden lg:flex space-x-8">
+                <a href="#home" class="hover:text-blue-100 transition-colors">Beranda</a>
+                <a href="#products" class="hover:text-blue-100 transition-colors">Produk</a>
+                <a href="#calculator" class="hover:text-blue-100 transition-colors">Kalkulator</a>
+                <a href="#testimonials" class="hover:text-blue-100 transition-colors">Testimoni</a>
+                <a href="#contact" class="hover:text-blue-100 transition-colors">Kontak</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="lg:hidden hidden bg-gray-800 text-white" id="mobile-menu">
+        <div class="container mx-auto px-4 py-2 flex flex-col space-y-2">
+            <a href="#home" class="py-2">Beranda</a>
+            <a href="#products" class="py-2">Produk</a>
+            <a href="#calculator" class="py-2">Kalkulator</a>
+            <a href="#testimonials" class="py-2">Testimoni</a>
+            <a href="#contact" class="py-2">Kontak</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center text-white">
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+        <div class="bg-[url('img/bg.jpeg')] absolute inset-0 bg-cover bg-center"></div>
+        <div class="relative z-20 text-center px-4">  
+            <h1 class="text-5xl md:text-6xl font-bold mb-4">Warnai Rumah Impian Anda</h1>
+            <p class="text-xl mb-8">Temukan koleksi cat tembok berkualitas tinggi dengan warna-warna modern</p>
+            <div>
+            <button class="bg-cyan-500 hover:bg-cyan-700 px-8 py-4 rounded-lg text-lg font-semibold transition-all hover:scale-105 mr-2" >
+                <a href="catalog.html">
+                    Lihat Katalog
+                </a>
+            </button>
+            <button class="bg-cyan-500 hover:bg-cyan-700 px-8 py-4 rounded-lg text-lg font-semibold transition-all hover:scale-105" >
+                <a href="produk.html">
+                    liat produk
+                </a>
+            </button>
+        </div>
+    </section>
+
+    <!-- Color Palette Section -->
+    <section class="py-16 bg-gray-200">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Palet Warna Terpopuler</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white h-32 rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer relative group">
+                    <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center text-white">
+                        white
+                    </div>
+                </div>
+                <div class="bg-black h-32 rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer relative group">
+                    <div class="absolute inset-0 bg-white/70 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center text-white">
+                        black
+                    </div>
+                </div>
+                <div class="bg-gray-500 h-32 rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer relative group">
+                    <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center text-white">
+                        gray
+                    </div>
+                </div>
+                <div class="bg-yellow-400 h-32 rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer relative group">
+                    <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center text-white">
+                        bright color
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Produk Unggulan</h2>
+            <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Product Card 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition-transform">
+                    <img src="img/Gambar WhatsApp 2025-01-12 pukul 10.11.29_1cf36944.jpg" alt="Cat Interior" class="w-full  object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Cat Interior</h3>
+                        <p class="text-red-500 text-xl font-bold mb-4">Rp 000.000</p>
+                        <p class="text-gray-600 mb-6">Cat tembok premium dengan daya tutup sempurna dan tahan lama.</p>
+                        <button class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg transition-colors">
+                            Beli Sekarang
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition-transform">
+                    <img src="/api/placeholder/400/300" alt="Cat Anti Noda" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Cat Anti Noda</h3>
+                        <p class="text-red-500 text-xl font-bold mb-4">Rp 000.000</p>
+                        <p class="text-gray-600 mb-6">Cat khusus dengan teknologi anti noda untuk kemudahan pembersihan.</p>
+                        <button class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg transition-colors">
+                            Beli Sekarang
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition-transform">
+                    <img src="img/Gambar WhatsApp 2025-01-12 pukul 10.11.30_1715a734.jpg" alt="Cat Eksterior" class="w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Cat Eksterior</h3>
+                        <p class="text-red-500 text-xl font-bold mb-4">Rp 000.000</p>
+                        <p class="text-gray-600 mb-6">Cat khusus eksterior dengan perlindungan UV dan tahan cuaca.</p>
+                        <button class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg transition-colors">
+                            Beli Sekarang
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition-transform">
+                    <img src="/api/placeholder/400/300" alt="Cat Anti Noda" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Cat tekstur</h3>
+                        <p class="text-red-500 text-xl font-bold mb-4">Rp 000.000</p>
+                        <p class="text-gray-600 mb-6">Cat khusus dengan teknologi memberikan kesan hidup.</p>
+                        <button class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg transition-colors">
+                            Beli Sekarang
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-xl">
+            <h2 class="text-3xl font-bold text-center mb-12">Kalkulator Kebutuhan Cat</h2>
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Panjang Dinding (meter)</label>
+                        <input type="number" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Tinggi Dinding (meter)</label>
+                        <input type="number" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Jumlah Dinding</label>
+                        <input type="number" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                    <button class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg transition-colors">
+                        Hitung Kebutuhan Cat
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gradient-to-br from-gray-800 to-blue-600 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Testimoni Pelanggan</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-lg p-6 rounded-xl">
+                    <p class="mb-4">"Cat yang sangat bagus, mudah diaplikasikan dan hasilnya memuaskan!"</p>
+                    <h4 class="font-bold">nama</h4>
+                    <p class="text-sm opacity-75">status</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg p-6 rounded-xl">
+                    <p class="mb-4">"Warna-warnanya cantik dan tahan lama. Sangat recommended!"</p>
+                    <h4 class="font-bold">nama</h4>
+                    <p class="text-sm opacity-75">status</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Tentang Kami</h3>
+                    <p class="text-gray-400"> Vimolux merupakan produsen cat berkualitas tinggi,Kami hadir dengan komitmen untuk menciptakan produk cat yang tidak hanya ramah lingkungan, tetapi juga memberikan hasil pengecatan yang luar biasa, tahan lama, dan mudah diaplikasikan..</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Kontak</h3>
+                    <div class="text-gray-400 space-y-2">
+                        <p>Email: m.fazle2006@gmail.com</p>
+                        <p>Telp: (+62) 812-3336-7636</p>
+                        <p>Alamat: </p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Ikuti Kami</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Facebook</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Instagram</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-4 right-4 bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 invisible hover:bg-blue-600 transition-all">
+        ↑
+    </button>
+</body>
+</html>
