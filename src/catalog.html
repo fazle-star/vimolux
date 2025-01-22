@@ -106,58 +106,47 @@
 <body class="font-sans">
     <!-- Header & Navigation -->
     <header class="fixed w-full bg-gradient-to-br from-indigo-500 to bg-softblue3 text-white z-50">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold hover:scale-105 transition-transform cursor-pointer">
-                <a href="index.html">
-                    Vimolux
-                </a>
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold hover:scale-105 transition-transform cursor-pointer">
+                    <a href="index.html">
+                        Vimolux
+                    </a>
+                    
+                </div>
+                
+                <!-- Mobile Menu Button with animated icon -->
+                <button class="lg:hidden p-2 focus:outline-none" id="mobile-menu-button">
+                    <div class="relative w-6 h-5">
+                        <span class="transform transition-transform duration-300 absolute h-0.5 w-full bg-white rounded-lg" id="line1"></span>
+                        <span class="transform transition-transform duration-300 absolute h-0.5 w-full bg-white rounded-lg top-2" id="line2"></span>
+                        <span class="transform transition-transform duration-300 absolute h-0.5 w-full bg-white rounded-lg top-4" id="line3"></span>
+                    </div>
+                </button>
+    
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex space-x-8">
+                    <a href="#About" class="hover:text-blue-100 transition-colors duration-300">About</a>
+                    <a href="#Katalog" class="hover:text-blue-100 transition-colors duration-300">Katalog</a>
+                    <a href="#calculator" class="hover:text-blue-100 transition-colors duration-300">Kalkulator</a>
+                    <a href="#contact" class="hover:text-blue-100 transition-colors duration-300">Kontak</a>
+                    <a href="produk.html" class="hover:text-blue-100 transition-colors duration-300">PRODUK</a>
+                </div>
             </div>
-        
-            <!-- Mobile Menu Button -->
-            <button class="lg:hidden" id="mobile-menu-button">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
-                </svg>
-            </button>
-
-            <!-- Navigation Links -->
-            <div class="hidden lg:flex space-x-8">
-                <a href="#About" class="hover:text-blue-100 transition-colors">About</a>
-                <a href="#Katalog" class="hover:text-blue-100 transition-colors">Katalog</a>
-                <a href="#calculator" class="hover:text-blue-100 transition-colors">Kalkulator</a>
-                <a href="#contact" class="hover:text-blue-100 transition-colors">Kontak</a>
-                <a href="produk.html" class="hover:text-blue-100 transition-colors font-bold ">produk</a>
+    
+            <!-- Mobile Navigation with slide and fade animation -->
+            <div class="transform transition-all duration-300 ease-in-out opacity-0 -translate-y-2 h-0 lg:hidden" id="mobile-menu">
+                <div class="flex flex-col space-y-4 mt-4 pb-4">
+                    <a href="#About" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">About</a>
+                    <a href="#Katalog" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">Katalog</a>
+                    <a href="#calculator" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">Kalkulator</a>
+                    <a href="#contact" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">Kontak</a>
+                    <a href="produk.html" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">PRODUK</a>
+                </div>
             </div>
         </nav>
     </header>
-
-    <!-- Mobile Menu -->
-    <div class="lg:hidden hidden bg-gray-800 text-white" id="mobile-menu">
-        <div class="container mx-auto px-4 py-2 flex flex-col space-y-2">   
-            <a href="#About" class="py-2">About</a>
-            <a href="#Katalog" class="py-2">Katalog/a>
-            <a href="#calculator" class="py-2">Kalkulator</a>
-            <a href="#contact" class="py-2">Kontak</a>
-            <a href="produk.html" class="hover:text-blue-100 transition-colors">PRODUK</a>
-        </div>
-    </div>
-
-    <!-- <div class="pt-20 flex mx-auto bg-white ease-out animate-slide-top ">
-        <div class="grid grid-rows-2 md:grid-cols-2 m-auto items-center ">
-            <div class=" bg-white p-5 rounded-lg shadow-xl md:w-[600px] ">
-                <img src="img/Gambar_WhatsApp_2025-01-08_pukul_15.18.39_3fb706de__1_-removebg.png" class=" w-[300px] md:w-[200px] m-auto">
-                <div class="text-center pt-2">
-                    <h3 class="font-bold">VIMOLUX PAINTS</h3>
-                    <p class="font-bold">INTERIOR & EXTERIOR PAINTS</p>
-                </div>
-            </div>
-            <div class=" m-4  justify-center pt-5 md:pt-18 ">
-                <h3 class="pb-5 font-bold text-xl">Produsen cat berkualitas</h3>
-                <p class="max-w-[600px]">Vimolux merupakan produsen cat berkualitas tinggi,Kami hadir dengan komitmen untuk menciptakan produk cat yang tidak hanya ramah lingkungan, tetapi juga memberikan hasil pengecatan yang luar biasa, tahan lama, dan mudah diaplikasikan..</p>
-                <img src="img/waranty-vimolux.jpg" class="w-[400px]">
-            </div>
-        </div>
-    </div> -->
+    
 
         <section class="py-16 bg-gradient-to-br bg-white h-screen" id="About">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -794,4 +783,5 @@
 </body>
 <script src="catalog.js"></script>
 <script src="tetimoni.js"></script>
+<script src="nav.js"></script>
 </html>

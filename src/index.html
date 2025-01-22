@@ -10,25 +10,40 @@
 <body class="font-sans">
     <!-- Header & Navigation -->
     <header class="fixed w-full bg-gradient-to-br from-indigo-500 to bg-softblue3 text-white z-50">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold hover:scale-105 transition-transform cursor-pointer">
-                Vimolux 
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold hover:scale-105 transition-transform cursor-pointer">
+                    Vimolux
+                </div>
+                
+                <!-- Mobile Menu Button with animated icon -->
+                <button class="lg:hidden p-2 focus:outline-none" id="mobile-menu-button">
+                    <div class="relative w-6 h-5">
+                        <span class="transform transition-transform duration-300 absolute h-0.5 w-full bg-white rounded-lg" id="line1"></span>
+                        <span class="transform transition-transform duration-300 absolute h-0.5 w-full bg-white rounded-lg top-2" id="line2"></span>
+                        <span class="transform transition-transform duration-300 absolute h-0.5 w-full bg-white rounded-lg top-4" id="line3"></span>
+                    </div>
+                </button>
+    
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex space-x-8">
+                    <a href="#home" class="hover:text-blue-100 transition-colors duration-300">Beranda</a>
+                    <a href="#products" class="hover:text-blue-100 transition-colors duration-300">Produk</a>
+                    <a href="#calculator" class="hover:text-blue-100 transition-colors duration-300">Kalkulator</a>
+                    <a href="#testimonials" class="hover:text-blue-100 transition-colors duration-300">Testimoni</a>
+                    <a href="#contact" class="hover:text-blue-100 transition-colors duration-300">Kontak</a>
+                </div>
             </div>
-            
-            <!-- Mobile Menu Button -->
-            <button class="lg:hidden" id="mobile-menu-b utton">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
-                </svg>
-            </button>
-
-            <!-- Navigation Links -->
-            <div class="hidden lg:flex space-x-8">
-                <a href="#home" class="hover:text-blue-100 transition-colors">Beranda</a>
-                <a href="#products" class="hover:text-blue-100 transition-colors">Produk</a>
-                <a href="#calculator" class="hover:text-blue-100 transition-colors">Kalkulator</a>
-                <a href="#testimonials" class="hover:text-blue-100 transition-colors">Testimoni</a>
-                <a href="#contact" class="hover:text-blue-100 transition-colors">Kontak</a>
+    
+            <!-- Mobile Navigation with slide and fade animation -->
+            <div class="transform transition-all duration-300 ease-in-out opacity-0 -translate-y-2 h-0 lg:hidden" id="mobile-menu">
+                <div class="flex flex-col space-y-4 mt-4 pb-4">
+                    <a href="#home" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">Beranda</a>
+                    <a href="#products" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">Produk</a>
+                    <a href="#calculator" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">Kalkulator</a>
+                    <a href="#testimonials" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">Testimoni</a>
+                    <a href="#contact" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">Kontak</a>
+                </div>
             </div>
         </nav>
     </header>
@@ -232,4 +247,5 @@
         ↑
     </button>
 </body>
+<script src="nav.js"></script>
 </html>
