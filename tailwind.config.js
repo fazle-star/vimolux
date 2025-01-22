@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+    const plugin = require('tailwind-scrollbar');
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   safelist: [
@@ -141,5 +142,5 @@ module.exports = {
       }
     },
   },  
-  plugins: [],
+  plugins: [require('tailwind-scrollbar-hide')],
 }

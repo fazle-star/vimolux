@@ -43,31 +43,43 @@
         .color-block:nth-child(4).show { transition-delay: 0.4s; }
         .color-block:nth-child(5).show { transition-delay: 0.5s; }
 
-        .hidden-scroll {
-            opacity: 0;
-            filter: blur(5px);
-            transform: translateX(-100%);
-            transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+         /* Animasi untuk desktop */
+         @media (min-width: 768px) {
+            .hidden-scroll {
+                opacity: 0;
+                filter: blur(5px);
+                transform: translateX(-100%);
+                transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            
+            .hidden-scroll-right {
+                opacity: 0;
+                filter: blur(5px);
+                transform: translateX(100%);
+                transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            }
         }
-        
-        .hidden-scroll-right {
-            opacity: 0;
-            filter: blur(5px);
-            transform: translateX(100%);
-            transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+        /* Animasi untuk mobile */
+        @media (max-width: 767px) {
+            .hidden-scroll, .hidden-scroll-right {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: all 0.8s ease-out;
+            }
         }
         
         .text-hidden {
             opacity: 0;
             transform: translateY(20px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            transition-delay: 0.4s;
+            transition: all 0.8s ease-out;
+            transition-delay: 0.2s;
         }
         
         .show-scroll {
             opacity: 1;
             filter: blur(0);
-            transform: translateX(0);
+            transform: translateX(0) translateY(0);
         }
         
         .text-show {
@@ -75,36 +87,19 @@
             transform: translateY(0);
         }
 
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .floating-animation {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        /* Responsive image container */
         .img-container {
-            aspect-ratio: 16/9;
-            overflow: hidden;
+            width: 100%;
+            position: relative;
+            padding-top: 75%; /* 4:3 Aspect Ratio */
         }
 
         .img-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        /* Custom breakpoint styles */
-        @media (max-width: 640px) {
-            .section-spacing {
-                margin-bottom: 3rem;
-            }
         }
     </style>
 </head>
@@ -130,8 +125,8 @@
                 <a href="#About" class="hover:text-blue-100 transition-colors">About</a>
                 <a href="#Katalog" class="hover:text-blue-100 transition-colors">Katalog</a>
                 <a href="#calculator" class="hover:text-blue-100 transition-colors">Kalkulator</a>
-                <a href="#testimonials" class="hover:text-blue-100 transition-colors">Testimoni</a>
                 <a href="#contact" class="hover:text-blue-100 transition-colors">Kontak</a>
+                <a href="produk.html" class="hover:text-blue-100 transition-colors font-bold ">produk</a>
             </div>
         </nav>
     </header>
@@ -142,8 +137,8 @@
             <a href="#About" class="py-2">About</a>
             <a href="#Katalog" class="py-2">Katalog/a>
             <a href="#calculator" class="py-2">Kalkulator</a>
-            <a href="#testimonials" class="py-2">Testimoni</a>
             <a href="#contact" class="py-2">Kontak</a>
+            <a href="produk.html" class="hover:text-blue-100 transition-colors">PRODUK</a>
         </div>
     </div>
 
@@ -206,8 +201,10 @@
                 </div>
 
                     <!-- CTA Button -->
-                <button class="mt-8 px-8 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-300 transform hover:-translate-y-1 " >
-                    CEK TESTIMONI
+                <button class="mt-8 px-8 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-300 transform hover:-translate-y-1">
+                    <a href="produk.html">
+                        CEK PRODUK
+                    </a>
                 </button>
                 </div>
             </div>
@@ -264,83 +261,82 @@
     </div>
 </div> -->
 
-<div class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen p-4 sm:p-6 md:p-8 lg:p-12">
-    <div class="max-w-7xl mx-auto space-y-12 sm:space-y-16 md:space-y-24 py-8 sm:py-12">
+<div class="bg-gradient-to-br from-gray-100 to-blue-300 min-h-screen p-4 mt-[1100px] md:mt-[50px] overflow-hidden">
+    <div class="max-w-7xl mx-auto space-y-8 md:space-y-16 py-4 md:py-8">
         <!-- Section 1 -->
-        <div class="flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-12 hidden-scroll section-spacing">
-            <div class="w-full md:w-1/2 group">
-                <div class="img-container relative rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg sm:shadow-xl md:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+        <div class="flex flex-col md:flex-row items-center gap-6 hidden-scroll">
+            <div class="w-full md:w-1/2">
+                <div class="img-container rounded-lg shadow-lg overflow-hidden">
                     <img src="img/Gambar WhatsApp 2025-01-17 pukul 05.44.57_01c70374.jpg" 
-                    alt="Image 1"
-                    class="transition-transform duration-500 group-hover:scale-105">
+                         alt="Image 1"
+                         class="hover:scale-105 transition-transform duration-500">
                 </div>
             </div>
-            <div class="w-full md:w-1/2 space-y-4 sm:space-y-5 md:space-y-6 text-hidden p-4 sm:p-6">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 tracking-tight">Eksplorasi Visual</h2>
-                <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
-                    Menemukan keindahan dalam setiap detail, menghadirkan perspektif baru dalam 
-                    setiap sudut pandang. Perjalanan visual yang menginspirasi dan memukau.
+            <div class="w-full md:w-1/2 p-4 text-hidden">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">sudah dipercaya banyak orang</h2>
+                <p class="text-gray-600">
+                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam aliquid adipisci delectus eligendi inventore, placeat at aspernatur libero accusantium consequatur labore voluptate debitis numquam corrupti atque amet quidem dolore sequi?
                 </p>
             </div>
         </div>
 
         <!-- Section 2 -->
-        <div class="flex flex-col md:flex-row-reverse items-center gap-6 sm:gap-8 md:gap-12 hidden-scroll-right section-spacing">
-            <div class="w-full md:w-1/2 group">
-                <div class="img-container relative rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg sm:shadow-xl md:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+        <div class="flex flex-col md:flex-row-reverse items-center gap-6 hidden-scroll-right">
+            <div class="w-full md:w-1/2">
+                <div class="img-container rounded-lg shadow-lg overflow-hidden">
                     <img src="img/Gambar WhatsApp 2025-01-17 pukul 05.43.27_b88bc892.jpg" 
-                    alt="Image 2"
-                    class="transition-transform duration-500 group-hover:scale-105">
+                         alt="Image 2"
+                         class="hover:scale-105 transition-transform duration-500">
                 </div>
             </div>
-            <div class="w-full md:w-1/2 space-y-4 sm:space-y-5 md:space-y-6 text-hidden p-4 sm:p-6">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 tracking-tight">Momen Sempurna</h2>
-                <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
-                    Setiap frame menceritakan kisah unik, mengabadikan momen berharga dalam 
-                    balutan estetika yang memukau. Kreativitas tanpa batas dalam setiap pixel.
+            <div class="w-full md:w-1/2 p-4 text-hidden">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">pengiriman cepat</h2>
+                <p class="text-gray-600">
+                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam temporibus dignissimos voluptates repellat corporis dolorum expedita, incidunt enim vero quas accusantium nostrum error animi, dolore odio fuga similique minima itaque.
                 </p>
             </div>
         </div>
 
         <!-- Section 3 -->
-        <div class="flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-12 hidden-scroll section-spacing">
-            <div class="w-full md:w-1/2 group">
-                <div class="img-container relative rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg sm:shadow-xl md:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
-                    <img src="img/Gambar WhatsApp 2025-01-17 pukul 05.43.28_29d8fe73.jpg" 
+        <div class="flex flex-col md:flex-row items-center gap-6 hidden-scroll">
+            <div class="w-full md:w-1/2">
+                <div class="img-container rounded-lg shadow-lg overflow-hidden">
+                    <img src="img/farian cat.jpg" 
                          alt="Image 3"
-                         class="transition-transform duration-500 group-hover:scale-105">
+                         class="hover:scale-105 transition-transform duration-500">
                 </div>
             </div>
-            <div class="w-full md:w-1/2 space-y-4 sm:space-y-5 md:space-y-6 text-hidden p-4 sm:p-6">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 tracking-tight">Harmoni Visual</h2>
-                <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
-                    Paduan sempurna antara teknik dan artistik, menciptakan harmoni visual yang 
-                    memikat. Sebuah masterpiece yang berbicara melalui bahasa universal.
+            <div class="w-full md:w-1/2 p-4 text-hidden">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">banyak varian</h2>
+                <p class="text-gray-600">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel voluptatum ipsam velit cupiditate fugiat autem tempore, similique possimus nostrum quidem nulla architecto, doloremque ipsum officia eos impedit voluptates unde iste!
                 </p>
             </div>
         </div>
     </div>
 </div>
-
     <!-- baris pertama -->
-    <div class="mt-[1000px] md:mt-[50px] z-50">
-    <h2 class="text-3xl font-bold text-center mb-12 "id="Katalog">catalog warna</h2>
-    </div> 
+    <div class="bg-[url('img/palet.webp')] md:h-96 bg-center mt-10 rounded-lg"  id="Katalog">
+        <div class="mt-[70px] md:mt-[50px] z-50 text-center flex items-center justify-center h-full">
+        <h2 class="text-[100px] capitalize font-bold mb-12 ">catalog warna</h2>
+        </div> 
+    </div>
     
-    <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
-        <button id="toggleButton" 
-        class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
-        putih
-    </button>
-    <div id="contentWrapper" class="content-wrapper hidden">
+<div class="grid md:grid-cols-3 gap-2 grid-cols-1 mt-12">
+        <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto " >
+            <button id="toggleButton" 
+            class="w-full bg-gray-100 border-2 border-gray-50 focus:border-2 focus:border-gray-950 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-white transition-colors duration-300 focus:outline-none">
+            putih
+        </button>
+        <div id="contentWrapper" class="content-wrapper hidden" >
         <section class="py-5 bg-gray-100"> 
             <div class="container mx-auto px-4">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="color-block h-32 bg-white rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
                         <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
                             putih
-                            </div>
                         </div>
+                    </div>
                         <div class="color-block h-32 bg-putih-seju rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
                             <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white">
                                 salju
@@ -359,7 +355,7 @@
     
     <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
         <button id="toggleButton2" 
-        class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
+        class="w-full bg-gray-100 border-2 border-gray-50 focus:border-2 focus:border-gray-950 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
         abu-abu
     </button>
     <div id="contentWrapper2" class="content-wrapper hidden">
@@ -399,7 +395,7 @@
     
     <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
         <button id="toggleButton3" 
-                class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
+                class="w-full bg-gray-100 border-2 border-gray-50 focus:border-2 focus:border-gray-950 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-yellow-200 transition-colors duration-300 focus:outline-none">
             kuning
         </button>
         <div id="contentWrapper3" class="content-wrapper hidden">
@@ -433,7 +429,7 @@
     </div>
     <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
         <button id="toggleButton4" 
-                class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
+                class="w-full bg-gray-100 border-2 border-gray-50 focus:border-2 focus:border-gray-950 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-green-300 transition-colors duration-300 focus:outline-none">
             hijau
         </button>
         <div id="contentWrapper4" class="content-wrapper hidden">
@@ -472,7 +468,7 @@
     </div>
     <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
         <button id="toggleButton5" 
-                class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
+                class="w-full bg-gray-100 border-2 border-gray-50 focus:border-2 focus:border-gray-950 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-tosca-100 transition-colors duration-300 focus:outline-none">
             tosca
         </button>
         <div id="contentWrapper5" class="content-wrapper hidden">
@@ -511,7 +507,7 @@
     </div>
     <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
         <button id="toggleButton6" 
-                class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
+        class="w-full bg-gray-100 border-2 border-gray-50 focus:border-2 focus:border-gray-950 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-biru-langit transition-colors duration-300 focus:outline-none">
             biru
         </button>
         <div id="contentWrapper6" class="content-wrapper hidden">
@@ -550,7 +546,7 @@
     </div>
     <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
         <button id="toggleButton7" 
-                class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
+                class="w-full bg-gray-100 border-2 border-gray-50 focus:border-2 focus:border-gray-950 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-red-400 transition-colors duration-300 focus:outline-none">
             merah
         </button>
         <div id="contentWrapper7" class="content-wrapper hidden">
@@ -589,9 +585,9 @@
     </div>
     <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
         <button id="toggleButton8" 
-                class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
-            pink
-        </button>
+                class="w-full bg-gray-100 border-2 border-gray-50 focus:border-2 focus:border-gray-950 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-pink-300 transition-colors duration-300 focus:outline-none">
+                pink
+            </button>
         <div id="contentWrapper8" class="content-wrapper hidden">
             <section class="py-5 bg-gray-100"> 
                 <div class="container mx-auto px-4">
@@ -618,8 +614,8 @@
     </div>
     <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
         <button id="toggleButton9" 
-                class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
-            orange
+        class="w-full bg-gray-100 border-2 border-gray-50 focus:border-2 focus:border-gray-950 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-orange-300 transition-colors duration-300 focus:outline-none">
+        orange
         </button>
         <div id="contentWrapper9" class="content-wrapper hidden">
             <section class="py-5 bg-gray-100"> 
@@ -647,11 +643,11 @@
     </div>
     <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
         <button id="toggleButton10" 
-                class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
-            coklat
-        </button>
-        <div id="contentWrapper10" class="content-wrapper hidden">
-            <section class="py-5 bg-gray-100"> 
+        class="w-full bg-gray-100 border-2 border-gray-50 focus:border-2 focus:border-gray-950 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-coklat transition-colors duration-300 focus:outline-none">
+        coklat
+    </button>
+    <div id="contentWrapper10" class="content-wrapper hidden">
+        <section class="py-5 bg-gray-100"> 
                 <div class="container mx-auto px-4">
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                         <div class="color-block h-32 bg-coklat rounded-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer relative group">
@@ -681,7 +677,7 @@
     </div>
     <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
         <button id="toggleButton11" 
-                class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
+        class="w-full bg-gray-100 border-2 border-gray-50 focus:border-2 focus:border-gray-950 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-krem-200 transition-colors duration-300 focus:outline-none">
             krem
         </button>
         <div id="contentWrapper11" class="content-wrapper hidden">
@@ -710,9 +706,9 @@
     </div>
     <div class="mt-4 md:mt-12 w-full max-w-4xl mx-auto">
         <button id="toggleButton12" 
-                class="w-full bg-gray-100 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-gray-200 transition-colors duration-300 focus:outline-none">
-            ungu
-        </button>
+        class="w-full bg-gray-100 border-2 border-gray-50 focus:border-2 focus:border-gray-950 font-bold text-center p-3 rounded-t-lg text-xl hover:bg-ungu transition-colors duration-300 focus:outline-none">
+        ungu
+    </button>
         <div id="contentWrapper12" class="content-wrapper hidden">
             <section class="py-5 bg-gray-100"> 
                 <div class="container mx-auto px-4">
@@ -737,6 +733,64 @@
             </section>
         </div>
     </div>
+</div>
+
+    <section id="calculator" class="py-16 bg-gray-50 mt-5">
+        <div class="container mx-auto px-4 max-w-xl">
+            <h2 class="text-3xl font-bold text-center mb-12">Kalkulator Kebutuhan Cat</h2>
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Panjang Dinding (meter)</label>
+                        <input type="number" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Tinggi Dinding (meter)</label>
+                        <input type="number" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Jumlah Dinding</label>
+                        <input type="number" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                    <button class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg transition-colors">
+                        Hitung Kebutuhan Cat
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-gray-800 text-white py-12 mt-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Tentang Kami</h3>
+                    <p class="text-gray-400"> Vimolux merupakan produsen cat berkualitas tinggi,Kami hadir dengan komitmen untuk menciptakan produk cat yang tidak hanya ramah lingkungan, tetapi juga memberikan hasil pengecatan yang luar biasa, tahan lama, dan mudah diaplikasikan..</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Kontak</h3>
+                    <div class="text-gray-400 space-y-2">
+                        <p>Email: m.fazle2006@gmail.com</p>
+                        <p>Telp: (+62) 812-3336-7636</p>
+                        <p>Alamat: </p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Ikuti Kami</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Facebook</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Instagram</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-4 right-4 bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 invisible hover:bg-blue-600 transition-all">
+        ↑
+    </button>
 </body>
 <script src="catalog.js"></script>
 <script src="tetimoni.js"></script>
