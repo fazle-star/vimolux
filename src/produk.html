@@ -10,11 +10,11 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <style>
         div {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
 }
 div::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge */
+    display: none; 
 }
 
     </style>
@@ -28,7 +28,6 @@ div::-webkit-scrollbar {
                     <a href="index.html">
                         Vimolux
                     </a>
-                    
                 </div>
                 
                 <!-- Mobile Menu Button with animated icon -->
@@ -44,8 +43,8 @@ div::-webkit-scrollbar {
                 <div class="hidden lg:flex space-x-8">
                     <a href="#home" class="hover:text-blue-100 transition-colors duration-300">About</a>
                     <a href="#PRODUK VIMOLUX" class="hover:text-blue-100 transition-colors duration-300">Produk</a>
+                    <a href="#hasil" class="hover:text-blue-100 transition-colors duration-300">hasil</a>
                     <a href="#calculator" class="hover:text-blue-100 transition-colors duration-300">Kalkulator</a>
-                    <a href="#contact" class="hover:text-blue-100 transition-colors duration-300">Kontak</a>
                     <a href="catalog.html" class="hover:text-blue-100 transition-colors duration-300">KATALOG</a>
                 </div>
             </div>
@@ -55,9 +54,9 @@ div::-webkit-scrollbar {
                 <div class="flex flex-col space-y-4 mt-4 pb-4">
                     <a href="#home" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">About</a>
                     <a href="#PRODUK VIMOLUX" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">produk</a>
-                    <a href="#calculator" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">Kalkulator</a>
-                    <a href="#contact" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">Kontak</a>
-                    <a href="produk.html" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">PRODUK</a>
+                    <a href="#hasil" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">hasil</a>
+                    <a href="#calculator" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">Kalkulator</a>   
+                    <a href="catalog.html" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">KATALOG</a>
                 </div>
             </div>
         </nav>
@@ -69,16 +68,16 @@ div::-webkit-scrollbar {
         <div class="container mx-auto px-4 py-2 flex flex-col space-y-2">
             <a href="#home" class="py-2">Beranda</a>
             <a href="#PRODUK VIMOLUX" class="py-2">Produk</a>
+            <a href="#hasil" class="py-2">hasil</a>
             <a href="#calculator" class="py-2">Kalkulator</a>
-            <a href="catalog.html" class="py-2">Katalog</a>
-            <a href="#contact" class="py-2">Kontak</a>
+            <a href="#catalog" class="py-2">KATALOG</a>
         </div>
     </div>
     
 <!-- Header Section -->
-<div class="pt-10" id="home">
+<div class="pt-10 md:pt-0" id="home">
     <div class="w-full h-screen p-4 text-center border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 bg-[url('img/bg-produk.jpg')] bg-cover bg-bottom bg-no-repeat ">
-        <div class="h-full flex justify-center items-center ">
+        <div class=" flex justify-center items-center h-full">
             <h5 class=" text-[50px] md:text-[150px]  font-bold text-white  p-3 bg-transparent z-10 absolute cursor-pointer  "> <a href="#PRODUK VIMOLUX">PRODUK VIMOLUX</a></h5>
             <h5 class=" text-[50px] md:text-[150px] font-bold text-blue-500 blur-sm p-3  bg-white/25 backdrop-blur-sm rounded-xl">PRODUK VIMOLUX</h5>
         </div>
@@ -86,102 +85,580 @@ div::-webkit-scrollbar {
 </div>
 
 <!-- Grid Container -->
-<div class="h-screen grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-center px-8" id="PRODUK VIMOLUX">
-    <!-- Product Card -->
-    <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 max-w-sm mx-auto">
-        <img class="rounded-t-lg w-full object-cover" src="img/vimolux-interlux.jpg" alt="Cat Tembok Interior" />
-        <div class="p-5">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Cat Tembok Interior</h5>
-            <p class="mb-4 text-gray-700 dark:text-gray-400">Dirancang untuk menciptakan ruang yang indah dengan ketahanan tinggi dan perawatan minimal. Cocok untuk ruangan dengan standar premium.</p>
-            <button data-modal-target="modal-product-1" data-modal-toggle="modal-product-1" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Lihat Detail
-            </button>
-        </div>
-    </div>
-
-    <!-- Modal Template -->
-    <div id="modal-product-1" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full ">
-        
-            <div class=" bg-white rounded-lg shadow  dark:bg-gray-700 ">
-                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 w-full">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                        Detail Produk
-                    </h3>
-                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="modal-product-1">
-                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                        </svg>
-                        <span class="sr-only">Tutup modal</span>
+    <div class="min-h-screen py-16 md:py-32 px-8 bg-white" id="PRODUK VIMOLUX"">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-start" >
+            <!-- Card interior -->
+            <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 max-w-sm mx-auto">
+                <img class="rounded-t-lg w-full object-cover" src="img/vimolux-interlux.jpg" alt="Cat Tembok Interior" />
+                <div class="p-5">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Cat Tembok Interior</h5>
+                    <p class="mb-4 text-gray-700 dark:text-gray-400">Dirancang untuk menciptakan ruang yang indah dengan ketahanan tinggi dan perawatan minimal. Cocok untuk ruangan dengan standar premium.</p>
+                    <button data-modal-target="modal-product-1" data-modal-toggle="modal-product-1" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Lihat Detail
                     </button>
                 </div>
-                <div class="p-4 md:p-5 space-y-4 md:flex gap-4 w-full " >
-                    <div>
-                        <img class="w-full h-full object-cover rounded-lg mb-4" src="img/vimolux-interlux.jpg" alt="Cat Tembok Interior" />
-                    </div>
-                    <div class="flex flex-col justify-between gap-5">
-                        <div class="overflow-y-scroll scrollbar-hide h-full w-[90%] ">
-                            <div class="h-56">
-                                <div class=" md:flex md:gap-10 ">
-                                    <div>
-                                        <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Keunggulan Interlux Premium:</h4>
-                                        <ul class="list-disc pl-5 space-y-2 text-gray-500 dark:text-gray-400 pt-4">
-                                            <li>Finishing elegan dan tahan lama</li>
-                                            <li>Cepat kering dan mudah diaplikasikan</li>
-                                            <li>Daya sebar optimalt</li>
-                                            <li>Warna tahan lama</li>
-                                            <li class="font-bold">Daya Sebaran: <br> <span class="font-normal">10-12 m²/kg per lapisan</span></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="pt-4 md:pt-0">
-                                        <h4 class="text-lg font-semibold text-gray-900 dark:text-white">aturan pakai:</h4>
-                                        <ul class="list-disc pl-5 space-y-2 text-gray-500 dark:text-gray-400 pt-4">
-                                            <li>Campurkan air sekitar 5-10%</li>
-                                            <li>Aplikasikan dengan kuas, roller, atau spray gun</li>
-                                            <li>Daya sebar optimalt</li>
-                                            <li>Waktu pengeringan: Kering sentuh dalam 30 menit, lapisan kedua setelah 3-4 jam</li>
-                                            <li class="font-bold">kemasan: <br> <span class="font-normal">5 kg dan 25 kg</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="relative">
-                                <div class="justify-center items-center flex translate-x-7 md:translate-x-0 mt-2  md:sticky md:top-0  w-[95%] h-[100px]">
-                                    <h1 class="text-3xl text-white font-bold ">STOK WARNA</h1>
-                                    <h1 class="text-3xl text-white blur-lg absolute">STOK WARNA</h1>
-                                </div>
-                                <div class="mt-5 md:mt-16 md:flex ">
-                                    <div class="translate-x-7 md:translate-x-0">
-                                        <img src="img/article-image-6-1024x829.webp" class="w-80 h-64">
-                                    </div>
-                                    <div>
-                                        <div class="pl-2 pt-3 md:pt-0 translate-x-5 md:translate-x-0">
-                                            <p class=" text-gray-500 dark:text-gray-400 font-bold">Beragam pilihan warna minimalis dan modern semua varian produk Vimolux untuk warna rumah bahagia.</p>
+            </div>
+        
+            <!-- Modal interior -->
+            <div id="modal-product-1" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full ">
+                
+                    <div class=" bg-white rounded-lg shadow  dark:bg-gray-700 ">
+                        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 w-full">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                                Detail Produk
+                            </h3>
+                            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="modal-product-1">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                </svg>
+                                <span class="sr-only">Tutup modal</span>
+                            </button>
+                        </div>
+                        <div class="p-4 md:p-5 space-y-4 md:flex gap-4 w-full " >
+                            <div class="z-10">
+                                <img class="w-full h-full object-cover rounded-lg mb-4" src="img/vimolux-interlux.jpg" alt="Cat Tembok Interior" />
+                            </div>
+                            <div class="flex flex-col justify-between gap-5">
+                                <div class="overflow-y-scroll md:scrollbar-thin scrollbar-thumb-white scrollbar-track-gray-700 h-full w-[90%] ">
+                                    <div class="h-56">
+                                        <div class=" md:flex md:gap-10 ">
+                                            <div>
+                                                <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Keunggulan Interlux Premium:</h4>
+                                                <ul class="list-disc pl-5 space-y-2 text-gray-500 dark:text-gray-400 pt-4">
+                                                    <li>Finishing elegan dan tahan lama</li>
+                                                    <li>Cepat kering dan mudah diaplikasikan</li>
+                                                    <li>Daya sebar optimalt</li>
+                                                    <li>Warna tahan lama</li>
+                                                    <li class="font-bold">Daya Sebaran: <br> <span class="font-normal">10-12 m²/kg per lapisan</span></li>
+                                                </ul>
+                                            </div>
+        
+                                            <div class="pt-4 md:pt-0">
+                                                <h4 class="text-lg font-semibold text-gray-900 dark:text-white">aturan pakai:</h4>
+                                                <ul class="list-disc pl-5 space-y-2 text-gray-500 dark:text-gray-400 pt-4">
+                                                    <li>Campurkan air sekitar 5-10%</li>
+                                                    <li>Aplikasikan dengan kuas, roller, atau spray gun</li>
+                                                    <li>Daya sebar optimalt</li>
+                                                    <li>Waktu pengeringan: Kering sentuh dalam 30 menit, lapisan kedua setelah 3-4 jam</li>
+                                                    <li class="font-bold">kemasan: <br> <span class="font-normal">5 kg dan 25 kg</span></li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                        <ul class="list-disc pl-7 space-y-2 text-gray-500 dark:text-gray-400 pt-4 ">
-                                            <li>Soft Ivory – VSI-001 (#F8F4E3)</li>
-                                            <li>Warm Taupe – VWT-002 (#D8C8B7)</li>
-                                            <li>Serene Blue – VSB-003 (#A3B9D1)</li>
-                                            <li>Dusty Rose – VDR-004 (#C4A6A1)</li>
-                                            <LI>Charcoal Gray – VCG-005 (#333333)</li>
-                                            <LI>Ivory Cream – VIC-007 (#FFF5E1)</li>
-                                        </ul>
+                                        <div class="relative">
+                                        <div class="justify-center items-center flex translate-x-7 md:translate-x-0 mt-2  md:sticky md:top-0  w-[95%] h-[100px]">
+                                            <h1 class="text-3xl text-white font-bold ">STOK WARNA</h1>
+                                            <h1 class="text-3xl text-white blur-lg absolute">STOK WARNA</h1>
+                                        </div>
+                                        <div class="mt-5 md:mt-16 md:flex ">
+                                            <div class="translate-x-7 md:translate-x-0">
+                                                <img src="img/article-image-6-1024x829.webp" class="w-80 h-64">
+                                            </div>
+                                            <div>
+                                                <div class="pl-2 pt-3 md:pt-0 translate-x-5 md:translate-x-0">
+                                                    <p class=" text-gray-500 dark:text-gray-400 font-bold">Beragam pilihan warna minimalis dan modern semua varian produk Vimolux untuk warna rumah bahagia.</p>
+                                                </div>
+                                                <ul class="list-disc pl-7 space-y-2 text-gray-500 dark:text-gray-400 pt-4 ">
+                                                    <li>Soft Ivory – VSI-001 (#F8F4E3)</li>
+                                                    <li>Warm Taupe – VWT-002 (#D8C8B7)</li>
+                                                    <li>Serene Blue – VSB-003 (#A3B9D1)</li>
+                                                    <li>Dusty Rose – VDR-004 (#C4A6A1)</li>
+                                                    <LI>Charcoal Gray – VCG-005 (#333333)</li>
+                                                    <LI>Ivory Cream – VIC-007 (#FFF5E1)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        </div>
                                     </div>
                                 </div>
+        
+                                <div class="flex items-center justify-center md:justify-end md:-translate-x-20 p-4 md:p-5 border-t  border-gray-200 rounded-b dark:border-gray-600">
+                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Hubungi Kami</button>
+                                    <button type="button" class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600" data-modal-hide="modal-product-1">Tutup</button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="flex items-center justify-center md:justify-end md:-translate-x-20 p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Hubungi Kami</button>
-                            <button type="button" class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600" data-modal-hide="modal-product-1">Tutup</button>
+                    </div>
+                
+            </div>
+    
+            <!-- card exsterior -->
+            <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 max-w-sm mx-auto">
+                <img class="rounded-t-lg w-full object-cover" src="img/vimolux-intermed.jpg" alt="Cat Tembok Interior" />
+                <div class="p-5">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Cat Tembok exsterior</h5>
+                    <p class="mb-7 text-gray-700 dark:text-gray-400 mt-6">Cat eksterior dengan perlindungan optimal terhadap cuaca buruk dan sinar UV. cocok untuk semua jenis bangunan.</p>
+                    <button data-modal-target="modal-product-2" data-modal-toggle="modal-product-2" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Lihat Detail
+                    </button>
+                </div>
+            </div>
+        
+            <!-- Modal exterior -->
+            <div id="modal-product-2" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full ">
+                
+                <div class=" bg-white rounded-lg shadow  dark:bg-gray-700 ">
+                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 w-full">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                            Detail Produk
+                        </h3>
+                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="modal-product-2">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                            </svg>
+                            <span class="sr-only">Tutup modal</span>
+                        </button>
+                    </div>
+                    <div class="p-4 md:p-5 space-y-4 md:flex gap-4 w-full " >
+                        <div class="z-10">
+                            <img class="w-full h-full object-cover rounded-lg mb-4" src="img/vimolux-intermed.jpg" alt="Cat Tembok Interior" />
+                        </div>
+                        <div class="flex flex-col justify-between gap-5">
+                            <div class="overflow-y-scroll md:scrollbar-thin scrollbar-thumb-white scrollbar-track-gray-700 h-full w-[90%] ">
+                                <div class="h-56">
+                                    <div class="w-[300px] md:w-[500px]">
+                                        <p class="text-xl font-bold text-white">Extermed (Medium Qualified)</p>
+                                        <p class=" w-full md:w-[700px] mt-3 mb-3 text-gray-400">Cat eksterior premium yang melindungi bangunan dari cuaca ekstrem, sinar UV, dan kelembapan tinggi. Highlux memberikan ketahanan superior dengan hasil pengecatan yang indah, cocok untuk bangunan mewah dan proyek komersial dengan standar tinggi.</p>
+                                    </div>
+                                    <div class=" md:flex md:gap-10 ">
+                                        <div>
+                                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Keunggulan Extermed (Kelas Medium) :</h4>
+                                            <ul class="list-disc pl-5 space-y-2 text-gray-500 dark:text-gray-400 pt-4">
+                                                <li>Perlindungan maksimal terhadap cuaca ekstrem</li>
+                                                    <li>Tahan terhadap sinar UV dan polusi</li>
+                                                    <li>Ketahanan warna yang luar biasa dalam waktu yang lama</li>
+                                                    <li class="font-bold">Daya Sebaran: <br> <span class="font-normal">10-12 m²/kg per lapisan</span></li>
+                                            </ul>
+                                        </div>
+    
+                                        <div>
+                                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white">aturan pakai:</h4>
+                                            <ul class="list-disc pl-5 space-y-2 text-gray-500 dark:text-gray-400 pt-4">
+                                                <li>Campurkan air sekitar 5-10%</li>
+                                                <li>Aplikasikan dengan kuas, roller, atau spray gun</li>
+                                                <li>Daya sebar optimalt</li>
+                                                <li>Waktu pengeringan: Kering sentuh dalam 30 menit, lapisan kedua setelah 3-4 jam</li>
+                                                <li class="font-bold">kemasan: <br> <span class="font-normal">5 kg dan 25 kg</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col md:flex-row">
+                                        <div>
+                                            <div class="mt-4 md:mt-16 pt-2 md:p-6 border-t flex text-center justify-center">
+                                                <div>
+                                                    <p class="text-xl md:text-3xl text-white">Highlux (Premium Qualified) </p>
+                                                    <p class="text-xl md:text-3xl text-white blur-lg relative bottom-6 md:bottom-10 ">Highlux (Premium Qualified) </p>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col md:flex-row ">
+                                                    <div class="flex justify-center items-center ">
+                                                        <img src="img/vimolux-intermed.jpg" alt="cat exsterior" class="w-[200px] ">
+                                                    </div >
+                                                    <div  class=" p-2 md:pl-4 mt-3 md:mt-0 ml-4 md:ml-4 bg-white/25 backdrop-blur-lg">
+                                                        <p  class="mw-[400px] md:w-[800px] mt-3 mb-3 text-white">Cat eksterior berkualitas dengan perlindungan optimal terhadap cuaca buruk dan sinar UV. Dirancang untuk bangunan rumah tinggal dan area komersial yang membutuhkan ketahanan ekstra terhadap elemen alam.</p>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="flex flex-col md:flex-row mt-6 dark:bg-gray-800 py-2 px-4 ml-5">
+                                        <div>
+                                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Keunggulan Highlux (Kelas Premium):</h4>
+                                            <ul  class="list-disc pl-5 space-y-2 text-gray-500 dark:text-gray-400 pt-4">
+                                                <li>Perlindungan maksimal terhadap cuaca ekstrem dan kelembapan</li>
+                                                <li>Ketahanan warna luar biasa dalam waktu lama</li>
+                                                <li class="font-bold">Daya Sebar: <br> <span class="font-normal">10-12 m²/kg per lapisan</span></li>
+                                            </ul>
+                                        </div>
+                                
+                                        <div class="mt-2 md:mt-0">
+                                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white">aturan pakai:</h4>
+                                            <ul class="list-disc pl-5 space-y-2 text-gray-500 dark:text-gray-400 pt-4">
+                                                <li>Campurkan air sekitar 5-10%</li>
+                                                <li>Aplikasikan dengan kuas, roller, atau spray gun</li>
+                                                <li>Waktu pengeringan: Kering sentuh dalam 30 menit, lapisan kedua setelah 3-4 jam</li>
+                                                <li class="font-bold">kemasan: <br> <span class="font-normal">5 kg dan 25 kg</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+    
+                                    <div class="relative">
+                                    <div class="justify-center items-center flex translate-x-7 md:translate-x-0 mt-2  md:sticky md:top-0  w-[95%] h-[100px]">
+                                        <h1 class="text-3xl text-white font-bold ">STOK WARNA</h1>
+                                        <h1 class="text-3xl text-white blur-lg absolute">STOK WARNA</h1>
+                                    </div>
+                                    <div class="mt-5 md:mt-16 md:flex ">
+                                        <div class="translate-x-10 md:translate-x-0">
+                                            <img src="img/cat-Eksterior-vimolux.jpg" class="w-64 md:w-80 h-64">
+                                        </div>
+                                        <div>
+                                            <div class="pl-2 pt-3 md:pt-0 translate-x-5 md:translate-x-0">
+                                                <p class=" text-gray-500 dark:text-gray-400 font-bold">Beragam pilihan warna minimalis dan modern semua varian produk Vimolux untuk warna rumah bahagia.</p>
+                                            </div>
+                                            <ul class="list-disc pl-7 space-y-2 text-gray-500 dark:text-gray-400 pt-4 ">
+                                                <li>Classic White – VCW-001 (#FFFFFF)</li>
+                                                <li>Slate Gray – VSG-002 (#708090)</li>
+                                                <li>Forest Green – VFG-003 (#228B22)</li>
+                                                <li>Rustic Red – VRR-004 (#8B0000)</li>
+                                                <lI>Ocean Blue – VOB-005 (#1E90FF)</li>
+                                                <lI>Sandstone Beige – VSB-006 (#D2B48C)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="flex items-center justify-center md:justify-end md:-translate-x-20 p-4 md:p-5 border-t  border-gray-200 rounded-b dark:border-gray-600">
+                                <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Hubungi Kami</button>
+                                <button type="button" class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600" data-modal-hide="modal-product-2">Tutup</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+    
+            <!-- card besi&kayu -->
+            <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 max-w-sm mx-auto">
+                <img class="rounded-t-lg w-full object-cover" src="img/vimolux-chroma.jpg" alt="Cat Tembok besi&kayu" />
+                <div class="p-5">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Cat Tembok besi&kayu</h5>
+                    <p class="mb-7 mt-7 text-gray-700 dark:text-gray-400">Vimolux Chroma berfungsi melindungi bagian rumah permukaan besi dan kayu dari karat dan kerusakan akibat cuaca.</p>
+                    <button data-modal-target="modal-product-3" data-modal-toggle="modal-product-3" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Lihat Detail
+                    </button>
+                </div>
+            </div>
+        
+            <!-- Modal besi&kayu -->
+            <div id="modal-product-3" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full ">
+                
+                    <div class=" bg-white rounded-lg shadow  dark:bg-gray-700 ">
+                        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 w-full">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                                Detail Produk
+                            </h3>
+                            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="modal-product-3">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                </svg>
+                                <span class="sr-only">Tutup modal</span>
+                            </button>
+                        </div>
+                        <div class="p-4 md:p-5 space-y-4 md:flex gap-4 w-full " >
+                            <div class="z-10">
+                                <img class="w-full h-full object-cover rounded-lg mb-4" src="img/vimolux-chroma.jpg" alt="Cat Tembok besi&kayu" />
+                            </div>
+                            <div class="flex flex-col justify-between gap-5">
+                                <div class="overflow-y-scroll md:scrollbar-thin scrollbar-thumb-white scrollbar-track-gray-700 h-full w-[90%] ">
+                                    <div class="h-56">
+                                        <div class=" md:flex md:gap-10 ">
+                                            <div>
+                                                <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Keunggulan Waterfiller (Kelas Medium):</h4>
+                                                <ul class="list-disc pl-5 space-y-2 text-gray-500 dark:text-gray-400 pt-4">
+                                                    <li>Perlindungan terhadap karat dan cuaca</li>
+                                                    <li>Hasil akhir halus dan tahan lama</li>
+                                                    <li class="font-bold">Daya Sebaran: <br> <span class="font-normal">10-12 m²/kg per lapisan</span></li>
+                                                </ul>
+                                            </div>
+        
+                                            <div class="pt-4 md:pt-0">
+                                                <h4 class="text-lg font-semibold text-gray-900 dark:text-white">aturan pakai:</h4>
+                                                <ul class="list-disc pl-5 space-y-2 text-gray-500 dark:text-gray-400 pt-4">
+                                                    <li>Campurkan air sekitar 5-10%</li>
+                                                    <li>Aplikasikan dengan kuas atau roller</li>
+                                                    <li>Waktu pengeringan: Kering sentuh dalam 30 menit, lapisan kedua setelah 3-4 jam</li>
+                                                    <li class="font-bold">kemasan: <br> <span class="font-normal">5 kg dan 25 kg</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="relative">
+                                        <div class="justify-center items-center flex translate-x-7 md:translate-x-0 mt-10  md:sticky md:top-0  w-[95%] h-[50px]">
+                                            <h1 class="text-3xl text-white font-bold ">STOK WARNA</h1>
+                                            <h1 class="text-3xl text-white blur-lg absolute">STOK WARNA</h1>
+                                        </div>
+                                        <div class="mt-5 md:mt-24 md:flex ">
+                                            <div class="translate-x-8 md:translate-x-0  translate-y-0 md:translate-y-2 ">    
+                                                <img src="img/chroma-vimolux.jpg" class="w-80 h-72">
+                                            </div>
+                                            <div>
+                                                <div class="pl-2 pt-3 md:pt-0 translate-x-5 md:translate-x-0">
+                                                    <p class=" text-gray-500 dark:text-gray-400 font-bold">Beragam pilihan warna minimalis dan modern semua varian produk Vimolux untuk warna rumah bahagia.</p>
+                                                </div>
+                                                <div class="flex flex-col md:flex-row gap-4 pt-1 ">
+                                                    <ul class="list-disc pl-7 space-y-2 text-gray-500 dark:text-gray-400  ">
+                                                        <li>Metallic Silver – VMS-001 (#C0C0C0)</li>
+                                                        <li>Glossy Black – VGB-002 (#000000)</li>
+                                                        <li>Bright Red – VBR-003 (#FF0000)</li>
+                                                        <li>Dark Brown – VDB-004 (#3E2723)</li>
+                                                        <lI>Forest Green – VFG-005 (#228B22)</li>
+                                                        <lI>Antique Gold – VAG-006 (#D4AF37)</li>
+                                                        <lI>Navy Blue – VNB-007 (#000080)</li>
+                                                        <lI>Rustic Orange – VRO-008 (#D87D2A)</li>
+                                                    </ul>
+                                                    <ul  class="list-disc pl-7 space-y-2 text-gray-500 dark:text-gray-400  ">
+                                                        <lI>Pearl White – VPW-009 (#F1F1F1)</li>
+                                                        <lI>Terracotta Brown – VTBR-010 (#D37A5D)</li>
+                                                        <lI>Slate Gray – VSG-011 (#708090)</li>
+                                                        <lI>Copper Shine – VCS-012 (#B87333)</li>
+                                                        <lI>Sandy Beige – VSB-013 (#D6C6B1)</li>
+                                                        <lI>Matte White – VMW-014 (#FFFFFF)</li>
+                                                        <lI>Platinum Gray – VPG-015 (#A8A8A8)</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="flex items-center justify-center md:justify-end md:-translate-x-20 p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Hubungi Kami</button>
+                                    <button type="button" class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600" data-modal-hide="modal-product-3">Tutup</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+    
+            <!-- card sealer -->
+            <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 max-w-sm mx-auto">
+                <img class="rounded-t-lg w-full object-cover" src="img/vimolux-alkafiler.jpg" alt="Cat Tembok sealer" />
+                <div class="p-5">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Cat Tembok sealer</h5>
+                    <p class="mb-7 mt-7 text-gray-700 dark:text-gray-400">Sealer Premium mempersiapkan permukaan cat utama dapat melekat lebih kuat dan memberikan hasil akhir yang lebih halus.</p>
+                    <button data-modal-target="modal-product-4" data-modal-toggle="modal-product-4" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Lihat Detail
+                    </button>
+                </div>
+            </div>
+        
+            <!-- Modal sealer -->
+            <div id="modal-product-4" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full ">
+                
+                <div class=" bg-white rounded-lg shadow  dark:bg-gray-700 ">
+                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 w-full">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                            Detail Produk
+                        </h3>
+                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="modal-product-4">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                            </svg>
+                            <span class="sr-only">Tutup modal</span>
+                        </button>
+                    </div>
+                    <div class="p-4 md:p-5 space-y-4 md:flex gap-4 w-full " >
+                        <div class="z-10">
+                            <img class="w-full h-full object-cover rounded-lg mb-4" src="img/vimolux-alkafiler.jpg" alt="Cat Tembok Interior" />
+                        </div>
+                        <div class="flex flex-col justify-between gap-5">
+                            <div class="overflow-y-scroll md:scrollbar-thin scrollbar-thumb-white scrollbar-track-gray-700 h-full w-[90%] ">
+                                <div class="h-56">
+                                    <div class="w-[300px] md:w-[500px]">
+                                        <p class="text-xl font-bold text-white">Waterfiller (Kelas Medium)</p>
+                                        <p class=" w-full md:w-[700px] mt-3 mb-3 text-gray-400">Cat Sealer Waterfiller Mengisi pori-pori pada permukaan kasar atau berpori, meningkatkan daya lekat cat, serta memberikan hasil pengecatan yang lebih halus dan merata.</p>
+                                    </div>
+                                    <div class=" md:flex md:gap-10 ">
+                                        <div>
+                                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Keunggulan Waterfiller (Kelas Medium):</h4>
+                                            <ul class="list-disc pl-5 space-y-2 text-gray-500 dark:text-gray-400 pt-4">
+                                                    <li>Meningkatkan daya lekat cat utama</li>
+                                                    <li>Memperhalus dan meratakan permukaan</li>
+                                                    <li>Meningkatkan daya tahan cat terhadap cuaca</li>
+                                                    <li class="font-bold">Daya Sebaran: <br> <span class="font-normal">10-12 m²/kg per lapisan</span></li>
+                                            </ul>
+                                        </div>
+    
+                                        <div>
+                                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white">aturan pakai:</h4>
+                                            <ul class="list-disc pl-5 space-y-2 text-gray-500 dark:text-gray-400 pt-4">
+                                                <li>Campurkan air sekitar 5-10%</li>
+                                                <li>Aplikasikan dengan kuas atau roller</li>
+                                                <li>Waktu pengeringan: Kering sentuh dalam 30 menit, lapisan kedua setelah 3-4 jam</li>
+                                                <li class="font-bold">kemasan: <br> <span class="font-normal">5 kg dan 25 kg</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col md:flex-row">
+                                        <div>
+                                            <div class="mt-4 md:mt-16 pt-2 md:p-6 border-t flex text-center justify-center">
+                                                <div>
+                                                    <p class="text-xl md:text-3xl text-white">Alkafiller (Kelas Premium) </p>
+                                                    <p class="text-xl md:text-3xl text-white blur-lg relative bottom-6 md:bottom-10 ">Alkafiller (Kelas Premium) </p>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col md:flex-row ">
+                                                    <div class="flex justify-center items-center ">
+                                                        <img src="img/vimolux-alkafiler.jpg" alt="cat exsterior" class="w-[200px] ">
+                                                    </div >
+                                                    <div  class=" p-2 md:pl-4 mt-3 md:mt-0 ml-4 md:ml-4 bg-white/25 backdrop-blur-lg">
+                                                        <p  class="mw-[400px] md:w-[800px] mt-3 mb-3 text-white">Alkafiller (Kelas Premium) Sealer premium yang mempersiapkan permukaan agar cat utama dapat melekat lebih kuat dan memberikan hasil akhir yang lebih halus dan tahan lama.</p>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="flex flex-col md:flex-row mt-6 dark:bg-gray-800 py-2 px-4 ml-5">
+                                        <div>
+                                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Keunggulan Alkafiller (Kelas Premium):</h4>
+                                            <ul  class="list-disc pl-5 space-y-2 text-gray-500 dark:text-gray-400 pt-4">
+                                                <li>Meningkatkan daya lekat cat utama</li>
+                                                <li>Memperhalus dan meratakan permukaan</li>
+                                                <li>Mengurangi kelembapan pada permukaan</li>
+                                                <li class="font-bold">Daya Sebar: <br> <span class="font-normal">10-12 m²/kg per lapisan</span></li>
+                                            </ul>
+                                        </div>
+                                
+                                        <div class="mt-2 md:mt-0">
+                                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white">aturan pakai:</h4>
+                                            <ul class="list-disc pl-5 space-y-2 text-gray-500 dark:text-gray-400 pt-4">
+                                                <li>Campurkan air sekitar 5-10%</li>
+                                                <li>Aplikasikan dengan kuas atau roller</li>
+                                                <li>Waktu pengeringan: Kering sentuh dalam 30 menit, lapisan kedua setelah 3-4 jam</li>
+                                                <li class="font-bold">kemasan: <br> <span class="font-normal">5 kg dan 25 kg</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+    
+                                    <div class="relative">
+                                    <div class="justify-center items-center flex translate-x-7 md:translate-x-0 mt-2  md:sticky md:top-0  w-[95%] h-[100px]">
+                                        <h1 class="text-3xl text-white font-bold ">STOK WARNA</h1>
+                                        <h1 class="text-3xl text-white blur-lg absolute">STOK WARNA</h1>
+                                    </div>
+                                    <div class="mt-5 md:mt-16 md:flex ">
+                                        <div class="translate-x-10 md:translate-x-0">
+                                            <img src="img/contoh-cat-sealer-vimolux.jpg" class="w-64 md:w-80 h-64">
+                                        </div>
+                                        <div>
+                                            <div class="pl-2 pt-3 md:pt-0 translate-x-5 md:translate-x-0">
+                                                <p class=" text-gray-500 dark:text-gray-400 font-bold">Beragam pilihan warna minimalis dan modern semua varian produk Vimolux untuk warna rumah bahagia.</p>
+                                            </div>
+                                            <ul class="list-disc pl-7 space-y-2 text-gray-500 dark:text-gray-400 pt-4 ">
+                                                <li>Clear Sealer – VCS-001 (#D3D3D3)/li>
+                                                <li>Matt Sealer – VMS-002 (#BEBEBE)</li>
+                                                <li>Satin Sealer – VSS-003 (#C0C0C0)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="flex items-center justify-center md:justify-end md:-translate-x-20 p-4 md:p-5 border-t  border-gray-200 rounded-b dark:border-gray-600">
+                                <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Hubungi Kami</button>
+                                <button type="button" class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600" data-modal-hide="modal-product-4">Tutup</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        
+        </div>
+    
     </div>
-</div>
+
+    <div class="min-h-screen py-16 md:py-32 px-4 bg-[url('img/fotage.jpeg')] bg-no-repeat bg-cover" id="hasil">
+        <div class="container mx-auto">
+            <div class="flex justify-center items-center mb-10">
+                <p class="text-xl md:text-[60px] mt-[40px] md:mt-auto font-sans font-bold capitalize">hasil dari produk kami</p>
+            </div>
+            <div class="relative max-w-4xl mx-auto ">
+                <!-- Slider container -->
+                <div class="overflow-hidden relative rounded-lg shadow-xl">
+                    <div class="flex transition-transform duration-500 ease-in-out" id="slider">
+                        <!-- Slide 1 -->
+                        <div class="min-w-full">
+                            <img src="img/Gambar WhatsApp 2025-01-17 pukul 05.44.58_d5fd0d0d.jpg" alt="Slide 1" class="w-full h-[500px] object-cover">
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="min-w-full">
+                            <img src="img/Gambar WhatsApp 2025-01-17 pukul 05.44.57_40196222.jpg"" alt="Slide 2" class="w-full h-[500px] object-cover">
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="min-w-full">
+                            <img src="img/Gambar WhatsApp 2025-01-17 pukul 05.44.57_01c70374.jpg" alt="Slide 3" class="w-full h-[500px] object-cover">
+                        </div>
+                    </div>
+    
+                    <!-- Navigation buttons -->
+                    <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-r-lg shadow-md" onclick="moveSlide(-1)">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-l-lg shadow-md" onclick="moveSlide(1)">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+    
+                    <!-- Dots indicators -->
+                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                        <button class="w-3 h-3 rounded-full bg-white/60 hover:bg-white transition-all dot active" onclick="goToSlide(0)"></button>
+                        <button class="w-3 h-3 rounded-full bg-white/60 hover:bg-white transition-all dot" onclick="goToSlide(1)"></button>
+                        <button class="w-3 h-3 rounded-full bg-white/60 hover:bg-white transition-all dot" onclick="goToSlide(2)"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section id="calculator" class="min-h-screen py-64 bg-gray-100">
+        <div class="container mx-auto px-4 max-w-xl">
+            <h2 class="text-3xl font-bold text-center mb-12">Kalkulator Kebutuhan Cat</h2>
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Panjang Dinding (meter)</label>
+                        <input type="number" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Tinggi Dinding (meter)</label>
+                        <input type="number" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Jumlah Dinding</label>
+                        <input type="number" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                    <button class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg transition-colors">
+                        Hitung Kebutuhan Cat
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Tentang Kami</h3>
+                    <p class="text-gray-400"> Vimolux merupakan produsen cat berkualitas tinggi,Kami hadir dengan komitmen untuk menciptakan produk cat yang tidak hanya ramah lingkungan, tetapi juga memberikan hasil pengecatan yang luar biasa, tahan lama, dan mudah diaplikasikan..</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Kontak</h3>
+                    <div class="text-gray-400 space-y-2">
+                        <p>Email: vazelamomandkids76@gmail.com</p>
+                        <p>Telp: (+62) 812-3336-7636</p>
+                        <p>Alamat: Jl selokan Mataram RT 06 RW 50 gondangan Maguwo sleman Yogyakarta </p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Ikuti Kami</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/1B1xHkXub5/" class="text-gray-400 hover:text-white transition-colors">Facebook</a>
+                        <a href="https://www.instagram.com/vimoluxjogja?utm_source=qr&igsh=MW5nOHBiZWx5dXd5eA==" class="text-gray-400 hover:text-white transition-colors">Instagram</a>
+                        <a href="http://www.olx.co.id/profile/132337224" class="text-gray-400 hover:text-white transition-colors">Olx</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 </body>
-<script src="nav.js"></script>
+
+<script src="js/nav.js"></script>
+<script src="js/sliderr.js"></script>
 </html>
