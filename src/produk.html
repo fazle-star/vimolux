@@ -8,6 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
     <link href="./output.css" rel="stylesheet">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel="icon" type="image/x-icon" href="img/Gambar_WhatsApp_2025-01-08_pukul_15.18.39_3fb706de__1_-removebg.ico">
     <style>
         div {
     scrollbar-width: none; 
@@ -44,18 +45,15 @@ div::-webkit-scrollbar {
                     <a href="#home" class="hover:text-blue-100 transition-colors duration-300">About</a>
                     <a href="#PRODUK VIMOLUX" class="hover:text-blue-100 transition-colors duration-300">Produk</a>
                     <a href="#hasil" class="hover:text-blue-100 transition-colors duration-300">hasil</a>
-                    <a href="#calculator" class="hover:text-blue-100 transition-colors duration-300">Kalkulator</a>
                     <a href="catalog.html" class="hover:text-blue-100 transition-colors duration-300">KATALOG</a>
                 </div>
             </div>
-    
             <!-- Mobile Navigation with slide and fade animation -->
             <div class="transform transition-all duration-300 ease-in-out opacity-0 -translate-y-2 h-0 lg:hidden" id="mobile-menu">
                 <div class="flex flex-col space-y-4 mt-4 pb-4">
                     <a href="#home" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">About</a>
                     <a href="#PRODUK VIMOLUX" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">produk</a>
-                    <a href="#hasil" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">hasil</a>
-                    <a href="#calculator" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">Kalkulator</a>   
+                    <a href="#hasil" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">hasil</a> 
                     <a href="catalog.html" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">KATALOG</a>
                 </div>
             </div>
@@ -69,7 +67,6 @@ div::-webkit-scrollbar {
             <a href="#home" class="py-2">Beranda</a>
             <a href="#PRODUK VIMOLUX" class="py-2">Produk</a>
             <a href="#hasil" class="py-2">hasil</a>
-            <a href="#calculator" class="py-2">Kalkulator</a>
             <a href="#catalog" class="py-2">KATALOG</a>
         </div>
     </div>
@@ -79,14 +76,14 @@ div::-webkit-scrollbar {
     <div class="w-full h-screen p-4 text-center border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 bg-[url('img/bg-produk.jpg')] bg-cover bg-bottom bg-no-repeat ">
         <div class=" flex justify-center items-center h-full">
             <h5 class=" text-[50px] md:text-[150px]  font-bold text-white  p-3 bg-transparent z-10 absolute cursor-pointer  "> <a href="#PRODUK VIMOLUX">PRODUK VIMOLUX</a></h5>
-            <h5 class=" text-[50px] md:text-[150px] font-bold text-blue-500 blur-sm p-3  bg-white/25 backdrop-blur-sm rounded-xl">PRODUK VIMOLUX</h5>
+            <h5 class=" text-[50px] md:text-[150px] font-bold text-black blur-sm p-3  bg-white/25 backdrop-blur-sm rounded-xl">PRODUK VIMOLUX</h5>
         </div>
     </div>
 </div>
 
 <!-- Grid Container -->
     <div class="min-h-screen py-16 md:py-32 px-8 bg-white" id="PRODUK VIMOLUX"">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-start" >
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-0 items-start" >
             <!-- Card interior -->
             <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 max-w-sm mx-auto">
                 <img class="rounded-t-lg w-full object-cover" src="img/vimolux-interlux.jpg" alt="Cat Tembok Interior" />
@@ -579,6 +576,12 @@ div::-webkit-scrollbar {
                         <div class="min-w-full">
                             <img src="img/Gambar WhatsApp 2025-01-17 pukul 05.44.57_01c70374.jpg" alt="Slide 3" class="w-full h-[500px] object-cover">
                         </div>
+                        <div class="min-w-full">
+                            <img src="img/Gambar WhatsApp 2025-02-01 pukul 17.55.24_01655212.jpg" alt="Slide 4" class="w-full h-[500px] object-cover">
+                        </div>
+                        <div class="min-w-full">
+                            <img src="img/Gambar WhatsApp 2025-02-01 pukul 17.55.23_8000ee90.jpg" alt="Slide 4" class="w-full h-[500px] object-cover">
+                        </div>
                     </div>
     
                     <!-- Navigation buttons -->
@@ -598,37 +601,13 @@ div::-webkit-scrollbar {
                         <button class="w-3 h-3 rounded-full bg-white/60 hover:bg-white transition-all dot active" onclick="goToSlide(0)"></button>
                         <button class="w-3 h-3 rounded-full bg-white/60 hover:bg-white transition-all dot" onclick="goToSlide(1)"></button>
                         <button class="w-3 h-3 rounded-full bg-white/60 hover:bg-white transition-all dot" onclick="goToSlide(2)"></button>
+                        <button class="w-3 h-3 rounded-full bg-white/60 hover:bg-white transition-all dot" onclick="goToSlide(3)"></button>
+                        <button class="w-3 h-3 rounded-full bg-white/60 hover:bg-white transition-all dot" onclick="goToSlide(4)"></button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <section id="calculator" class="min-h-screen py-64 bg-gray-100">
-        <div class="container mx-auto px-4 max-w-xl">
-            <h2 class="text-3xl font-bold text-center mb-12">Kalkulator Kebutuhan Cat</h2>
-            <div class="bg-white rounded-xl shadow-lg p-8">
-                <form class="space-y-4">
-                    <div>
-                        <label class="block text-gray-700 mb-2">Panjang Dinding (meter)</label>
-                        <input type="number" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 mb-2">Tinggi Dinding (meter)</label>
-                        <input type="number" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 mb-2">Jumlah Dinding</label>
-                        <input type="number" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                    </div>
-                    <button class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg transition-colors">
-                        Hitung Kebutuhan Cat
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
 
     <footer id="contact" class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-4">

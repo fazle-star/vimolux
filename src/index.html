@@ -6,6 +6,132 @@
     <title>vimolux - Toko Cat Modern</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="./output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="img/Gambar_WhatsApp_2025-01-08_pukul_15.18.39_3fb706de__1_-removebg.ico">
+    <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .slider-container {
+            max-width: 600px;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+            padding: 0 40px; /* Memberikan ruang untuk tombol */
+        }
+
+        .testimonial-slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide.prev {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .client-name {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .client-role {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Styling untuk tombol navigasi */
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #3498db;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+            z-index: 10;
+        }
+
+        .nav-button:hover {
+            background: #2980b9;
+        }
+
+        .prev-button {
+            left: 0;
+        }
+
+        .next-button {
+            right: 0;
+        }
+
+        /* Styling untuk dots indicator */
+        .slider-dots {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background: #3498db;
+        }
+    </style>
+    
+    
 </head>
 <body class="font-sans">
     <!-- Header & Navigation -->
@@ -29,7 +155,6 @@
                 <div class="hidden lg:flex space-x-8">
                     <a href="#home" class="hover:text-blue-100 transition-colors duration-300">Beranda</a>
                     <a href="#products" class="hover:text-blue-100 transition-colors duration-300">Produk</a>
-                    <a href="#calculator" class="hover:text-blue-100 transition-colors duration-300">Kalkulator</a>
                     <a href="#testimonials" class="hover:text-blue-100 transition-colors duration-300">Testimoni</a>
                     <a href="#contact" class="hover:text-blue-100 transition-colors duration-300">Kontak</a>
                 </div>
@@ -40,12 +165,13 @@
                 <div class="flex flex-col space-y-4 mt-4 pb-4">
                     <a href="#home" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">Beranda</a>
                     <a href="#products" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">Produk</a>
-                    <a href="#calculator" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">Kalkulator</a>
                     <a href="#testimonials" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">Testimoni</a>
                     <a href="#contact" class="transform transition-all duration-300 hover:text-blue-100 hover:translate-x-2">Kontak</a>
                 </div>
             </div>
+            
         </nav>
+        
     </header>
 
     <!-- Mobile Menu -->
@@ -53,7 +179,6 @@
         <div class="container mx-auto px-4 py-2 flex flex-col space-y-2">
             <a href="#home" class="py-2">Beranda</a>
             <a href="#products" class="py-2">Produk</a>
-            <a href="#calculator" class="py-2">Kalkulator</a>
             <a href="#testimonials" class="py-2">Testimoni</a>
             <a href="#contact" class="py-2">Kontak</a>
         </div>
@@ -83,7 +208,7 @@
     <!-- Color Palette Section -->
     <section class="py-16 bg-gray-200">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Palet Warna Terpopuler</h2>
+            <h2 class="text-3xl font-bold text-center mb-12 text-black">Palet Warna Terpopuler</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="bg-white h-32 rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer relative group">
                     <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center text-white">
@@ -91,7 +216,7 @@
                     </div>
                 </div>
                 <div class="bg-black h-32 rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer relative group">
-                    <div class="absolute inset-0 bg-white/70 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center text-white">
+                    <div class="absolute inset-0 bg-white/70 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center text-black">
                         black
                     </div>
                 </div>
@@ -110,16 +235,16 @@
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="py-16">
+    <section id="products" class="py-16 bg-white min-h-screen flex justify-center items-center ">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Produk Unggulan</h2>
+            <h2 class="text-3xl text-black font-bold text-center mb-12">Produk Unggulan</h2>
             <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
                 <!-- Product Card 1 -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition-transform">
-                    <img src="img/vimolux-interlux.jpg" alt="Cat Interior" class="w-full  object-cover">
+                    <img src="img/vimolux-interlux.jpg" alt="Cat Interior" class="w-full  object-cover border-b-2 border-black">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Cat Interior</h3>
-                        <p class="text-red-500 text-xl font-bold mb-4">Rp 000.000</p>
+                        <p class="text-red-500 text-xl font-bold mb-4">Rp.700,000</p>
                         <p class="text-gray-600 mb-6">Medium & Premium Qualified menciptakan ruang yang indah dengan ketahanan tinggi dan perawatan yang minimal.</p>
                         <button class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg transition-colors">
                             <a href="produk.html">
@@ -131,10 +256,10 @@
 
                 <!-- Product Card 2 -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition-transform">
-                    <img src="img/vimolux-chroma.jpg" alt="Cat Anti Noda" class="w-full  object-cover">
+                    <img src="img/vimolux-chroma.jpg" alt="Cat Anti Noda" class="w-full  object-cover border-b-2 border-black">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Cat besi&kayu</h3>
-                        <p class="text-red-500 text-xl font-bold mb-4">Rp 000.000</p>
+                        <p class="text-red-500 text-xl font-bold mb-4">Rp 1.400.000</p>
                         <p class="text-gray-600 mb-6">Vimolux Chroma berfungsi melindungi bagian rumah permukaan besi dan kayu dari karat dan kerusakan akibat cuaca.</p>
                         <button class="w-full mt-6 bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg transition-colors">
                             <a href="produk.html">
@@ -147,10 +272,10 @@
                 <!-- Product Card 3 -->
                 
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition-transform">
-                    <img src="img/vimolux-intermed.jpg" alt="Cat Eksterior" class="w-full  object-cover">
+                    <img src="img/vimolux-intermed.jpg" alt="Cat Eksterior" class="w-full  object-cover border-b-2 border-black">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Cat Eksterior</h3>
-                        <p class="text-red-500 text-xl font-bold mb-4">Rp 000.000</p>
+                        <p class="text-red-500 text-xl font-bold mb-4">Rp 600.000</p>
                         <p class="text-gray-600 mb-6">Cat eksterior dengan perlindungan optimal terhadap cuaca buruk dan sinar UV. cocok untuk semua jenis bangunan.</p>
                         <button class="w-full mt-6 bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg transition-colors">
                             <a href="produk.html">
@@ -162,10 +287,10 @@
 
                 <!-- Product Card 2 -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition-transform">
-                    <img src="img/vimolux-alkafiler.jpg" alt="Cat Anti Noda" class="w-full  object-cover">
+                    <img src="img/vimolux-alkafiler.jpg" alt="Cat Anti Noda" class="w-full  object-cover border-b-2 border-black">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Cat sealer</h3>
-                        <p class="text-red-500 text-xl font-bold mb-4">Rp 000.000</p>
+                        <p class="text-red-500 text-xl font-bold mb-4">Rp 800.000</p>
                         <p class="text-gray-600 mb-6">Sealer Premium mempersiapkan permukaan cat utama dapat melekat lebih kuat dan memberikan hasil akhir yang lebih halus.</p>
                         <button class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg transition-colors">
                             <a href="produk.html">
@@ -178,50 +303,19 @@
         </div>
     </section>
 
-    <!-- Calculator Section -->
-    <section id="calculator" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 max-w-xl">
-            <h2 class="text-3xl font-bold text-center mb-12">Kalkulator Kebutuhan Cat</h2>
-            <div class="bg-white rounded-xl shadow-lg p-8">
-                <form class="space-y-4">
-                    <div>
-                        <label class="block text-gray-700 mb-2">Panjang Dinding (meter)</label>
-                        <input type="number" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 mb-2">Tinggi Dinding (meter)</label>
-                        <input type="number" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 mb-2">Jumlah Dinding</label>
-                        <input type="number" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                    </div>
-                    <button class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg transition-colors">
-                        Hitung Kebutuhan Cat
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-16 bg-gradient-to-br from-gray-800 to-blue-600 text-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Testimoni Pelanggan</h2>
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-white/10 backdrop-blur-lg p-6 rounded-xl">
-                    <p class="mb-4">"Cat yang sangat bagus, mudah diaplikasikan dan hasilnya memuaskan!"</p>
-                    <h4 class="font-bold">nama</h4>
-                    <p class="text-sm opacity-75">status</p>
-                </div>
-                <div class="bg-white/10 backdrop-blur-lg p-6 rounded-xl">
-                    <p class="mb-4">"Warna-warnanya cantik dan tahan lama. Sangat recommended!"</p>
-                    <h4 class="font-bold">nama</h4>
-                    <p class="text-sm opacity-75">status</p>
-                </div>
-            </div>
+    <div class="slider-container" id="testimonials">
+        <button class="nav-button prev-button bg-transparent text-3xl text-black hover:bg-transparent" onclick="prevSlide()">&#10094;</button>
+        <button class="nav-button next-button bg-transparent text-3xl text-black hover:bg-transparent" onclick="nextSlide()">&#10095;</button>
+        
+        <div class="testimonial-slider" id="testimonialSlider">
+            <!-- Slides will be inserted here by JavaScript -->
         </div>
-    </section>
+        
+        <div class="slider-dots" id="sliderDots">
+            <!-- Dots will be inserted here by JavaScript -->
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer id="contact" class="bg-gray-800 text-white py-12">
@@ -257,4 +351,5 @@
     </button>
 </body>
 <script src="js/nav.js"></script>
+<script src="js/testimonial.js"></script>
 </html>

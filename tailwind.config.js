@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
     const plugin = require('tailwind-scrollbar');
 module.exports = {
+  darkMode: 'class',
   content: ["./src/**/*.{html,js}"],
   safelist: [
     // Safelist untuk background colors
