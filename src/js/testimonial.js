@@ -1,6 +1,6 @@
 const testimonials = [
     {
-        text: "Saya sangat senang  ada produk cet texture pasir yang tidak ditemukan di merek lain jadi bisa langsung di aplikasikan tanpa repot repot lagi.",
+        text: "Saya sangat senang ada produk cet texture pasir yang tidak ditemukan di merek lain jadi bisa langsung di aplikasikan tanpa repot' lagi.",
         name: "Satriya",
         role : "bantul"
     },
@@ -10,7 +10,7 @@ const testimonials = [
         role: "pemilik kos"
     },
     {
-        text: "saya sudah bekerja sama dengan produk vimolux dan owner nya selama kurang lebih setahun..selalu ada solusi jika ditemukan permasalahan ..semoga vimolux selalu dihati dan semakin berkembang serta  sukses selalu.",
+        text: "saya sudah bekerja sama dengan produk vimolux dan owner nya selama kurang lebih setahun.selalu ada solusi jika ditemukan permasalahan.",
         name: "Bayu",
         role: "developer"
     },
