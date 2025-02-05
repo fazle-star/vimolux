@@ -1,7 +1,7 @@
 const slider = document.getElementById('slider');
 const dots = document.querySelectorAll('.dot');
 let currentSlide = 0;
-const totalSlides = 5;
+const totalSlides = 7;
 
 // Function to update dots
 function updateDots() {
