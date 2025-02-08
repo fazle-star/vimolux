@@ -11,11 +11,11 @@ const testimonials = [
     },
     {
         text: "saya sudah bekerja sama dengan produk vimolux dan owner nya selama kurang lebih setahun.selalu ada solusi jika ditemukan permasalahan.",
-        name: "Bayu",
+        name: "Heryanto",
         role: "developer"
     },
     {
-        text: "Warna –warnanya cantik dan tahan lama .sangat rekomemmneded.",
+        text: "Warna-warnanya cantik dan tahan lama .sangat rekomemmneded.",
         name: "Ibu Dyah.",
         role: "Pemilik rumah pribadi,Sleman."
     },
